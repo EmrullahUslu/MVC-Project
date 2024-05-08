@@ -1,0 +1,23 @@
+﻿@model EPayCar.Model.Entities.Carbrands
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Yeni Marka Ekle </h1>
+
+@if (ViewBag.BrandsAddError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.BrandsAddError
+    </div>
+}
+
+<br />
+
+<form asp-area="Admin" asp-controller="Brands" asp-action="Add" method="post">
+    <input type="text" name="Brand" placeholder="Marka Adı Giriniz" class="form-control form-control-lg" /><br />
+    <input type="text" name="Description" placeholder="Marka Açıklamasını Giriniz" class="form-control" /><br />
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+</form>

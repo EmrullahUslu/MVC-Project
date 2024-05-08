@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9xT6EJfbvKBCtMhynIJkfD3XxRReo12qB1I3Q4WDqAk=",
+  "Source": "EPayCarAPI",
+  "BasePath": "_content/EPayCarAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

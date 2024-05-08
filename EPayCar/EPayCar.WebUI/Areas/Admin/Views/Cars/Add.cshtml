@@ -1,0 +1,36 @@
+﻿@model EPayCar.Model.Entities.Carscs
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Araba ekleme</h1>
+
+@if (ViewBag.ArabaAddError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ArabaAddError
+    </div>
+}
+<br />
+<form asp-area="Admin" asp-controller="Cars" asp-action="Add" method="post" enctype="multipart/form-data">
+    <input type="text" name="CareName" placeholder="Araba Adı" class="form-control" /><br />
+    <input type="text" name="Model" placeholder="Modeli" class="form-control" /><br />
+    <input type="text" name="Year" placeholder="Yılı" class="form-control" /><br />
+    <input type="number" name="Kilometer" placeholder="Kilometresi" class="form-control" class="form-control" /><br />
+    <input type="text" name="FuelType" placeholder="Yakıt Tipi" class="form-control" /><br />
+    <input type="text" name="Colour" placeholder="Rengi" class="form-control" /><br />
+    <input type="text" name="Price" placeholder="Fiyatı" class="form-control" /><br />
+    <input type="text" name="Description" placeholder="Açıklaması" class="form-control" /><br />
+    <input type="text" name="Stock" placeholder="Stok bilgisi" class="form-control" /><br />
+    <input type="file" name="file" placeholder="Araba Resmini Ekleyin" class="form-control" /><br />
+    <select name="CarbrandsID" class="form-control">
+        <option value="0" selected>Marka Seçimi Yapınız!</option>
+        @foreach (var item in ViewBag.ArabaListesi)
+        {
+            <option value="@item.ID">@item.Brand</option>
+        }
+    </select><br />
+    <input type="submit" value="Kaydet" class="btn btn-success" />
+</form>

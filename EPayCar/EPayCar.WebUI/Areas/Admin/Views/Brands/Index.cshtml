@@ -1,0 +1,36 @@
+﻿@model IEnumerable<EPayCar.Model.Entities.Carbrands>
+@{
+    ViewData["Title"] = "BrandsList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Brands List Admin panel </h1>
+
+
+
+
+<a asp-area="Admin" asp-controller="Brands" asp-action="Add" class="btn btn-success">Yeni Marka Ekle</a>
+
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Marka ID</th>
+            <th scope="col">Marka Adı</th>
+            <th scope="col">Günçelle</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Brand</td>
+                <td><a class="btn btn-warning" asp-area="Admin" asp-controller="Brands" asp-action="Update" asp-route-id="@item.ID">Güncelle</a></td>
+                <td><a class="btn btn-danger" asp-area="Admin" asp-controller="Brands" asp-action="Delete" asp-route-id="@item.ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model EPayCar.WebUI.Models.ShoppingCart
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/css/bodyfont.css" rel="stylesheet" />
+
+<h1>Seçili Araba Özeti</h1>
+
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Araba Adı</th>
+            <th scope="col">Fiyat</th>
+            <th scope="col">Adet</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CartItems)
+        {
+            <tr>
+                <td>@item.CarName</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td><a class="btn btn-danger" asp-controller="Cart" asp-action="RemoveToCart" asp-route-id="@item.ID">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p>Toplam Fiyat : @Model.TotalAmount</p>
+
+<br />
+
+<div class="container">
+    <div class="row">
+        <a asp-controller="Home" asp-action="Index" class="btn btn-primary col-md-4">Satın Almaya devam et</a>
+        <a asp-controller="Cart" asp-action="PaySend" class="btn btn-success col-md-4">Ödeme Yap</a>
+        <a asp-controller="Cart" asp-action="ClearCart" class="btn btn-danger col-md-4">Bütün seçimleri iptal et</a>
+    </div>
+</div>

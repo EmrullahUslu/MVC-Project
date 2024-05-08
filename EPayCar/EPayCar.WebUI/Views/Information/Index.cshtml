@@ -1,0 +1,74 @@
+﻿<link href="~/css/bodyfont.css" rel="stylesheet" />
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Hakkımızda</h1>
+
+<style type="text/css">
+  
+body {
+  font-size: 18px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.left,
+.right {
+  height: 50vh;
+  flex: 1;
+  border: 1px dotted blue;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.video {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.rightimg {
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+
+.right>div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}	
+
+.writeup {
+  margin-left: 10px;
+  margin-right: 10px;	
+}  
+</style>
+
+<div class="container">
+  <div class="left">
+
+
+<p class="writeup"><i class='fa fa-edit' style='font-size:30px;color:blue'></i>
+            EPayCar Platformunun Genel Tanıtımı:
+            EPayCar, online araba satışı konusunda öncü olan bir e-ticaret platformudur. Geniş ürün yelpazesi ve kullanıcı dostu arayüzü ile müşterilere araç satın alma konusunda güvenilir bir deneyim sunmaktadır. Sitenin araç detayları, fiyatlandırma politikaları ve kullanıcı geri bildirimleri gibi temel özellikleri, alıcıların karar verme sürecini kolaylaştırmak için tasarlanmıştır.</p>
+
+  </div>
+    <div class="left">
+    <div>
+            <p class="writeup">
+                <i class='fa fa-edit' style='font-size:30px;color:blue'></i>
+                EPayCar'ın Güvenlik ve Kalite Standartları:
+                EPayCar, müşterilerin güvenli alışveriş yapabilmeleri için yüksek güvenlik standartlarına önem veren bir platformdur. Satışa sunulan araçların detaylı teknik incelemeleri yapılarak, kalite kontrol süreçlerinden geçirilir ve bu bilgiler müşterilerle şeffaf bir şekilde paylaşılır. Ayrıca, ödeme işlemleri ve kişisel bilgilerin korunması konusunda en son güvenlik teknolojileri kullanılarak müşteri memnuniyeti ve güvenliği sağlanır.
+            </p>
+        </div>
+  </div>
+</div>

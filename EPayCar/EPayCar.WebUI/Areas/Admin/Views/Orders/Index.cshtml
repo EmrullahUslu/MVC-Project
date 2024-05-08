@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EPayCar.Model.Entities.Orders>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Orders</h1>
+
+
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger">
+        Kayıtlı Araba yok
+    </div>
+}
+else
+{
+
+    <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Sipariş ID</th>
+                <th scope="col">Alıcı isim soy isim</th>
+                <th scope="col">Ay</th>
+                <th scope="col">Yıl</th>
+                <th scope="col">Sipariş teslim edildi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="col">@item.ID</th>
+                    <th scope="col">@item.AdSoyad</th>
+                    <th scope="col">@item.Ay</th>
+                    <th scope="col">@item.Year</th>
+                    <th scope="col"><a asp-area="Admin" asp-controller="Orders" asp-action="Wasdelivered" asp-route-id="@item.ID" class="btn btn-success">Onayla</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

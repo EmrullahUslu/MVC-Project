@@ -1,0 +1,27 @@
+﻿@model EPayCar.Model.Entities.Carscs
+<link href="~/css/bodyfont.css" rel="stylesheet" />
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Araba Detayı</h1>
+
+
+
+<br />
+<img class="card-img-top" src="~/images/@Model.CarImageName" alt="Card image cap"> <br />
+<form asp-controller="Cart" asp-action="AddToCart" method="post">
+    <input type="hidden" name="ID" value="@Model.ID" class="form-control" /> <br />
+    <input type="text" name="CareName" value="@Model.CarbrandsID" class="form-control"  readonly /><br /> 
+    <input type="text" name="Model" value="@Model.Model" class="form-control" readonly /><br />
+    <input type="text" name="Year" value="@Model.Year" class="form-control" readonly /><br />
+    <input type="number" name="Kilometer" value="@Model.Kilometer" class="form-control" readonly /><br />
+    <input type="text" name="FuelType" value="@Model.FuelType" class="form-control" readonly /><br />
+    <input type="text" name="Colour" value="@Model.Colour" class="form-control" readonly /><br />
+    <input type="text" name="Price" value="@Model.Price" class="form-control" readonly /><br />
+    <input type="text" name="Description" value="@Model.Description" class="form-control" readonly /><br />
+    <input type="text" name="Stock" value="@Model.Stock" class="form-control" readonly /><br />
+    <input type="submit" value="Sepete Ekle" class="btn btn-success" />
+</form>
+

@@ -1,0 +1,39 @@
+﻿@model EPayCar.Model.Entities.Carscs
+
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Araba Günçelle</h1>
+
+@if (ViewBag.ArabaUpdateError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.ArabaUpdateError
+    </div>
+}
+
+<form asp-area="Admin" asp-controller="Cars" asp-action="Update" method="post" enctype="multipart/form-data">
+    <input type="text" name="CareName" value="@Model.CareName" placeholder="Araba Adı" /><br />
+    <input type="text" name="Model" value="@Model.Model" placeholder="Modeli" /><br />
+    <input type="text" name="Year" value="@Model.Year" placeholder="Yılı" /><br />
+    <input type="number" name="Kilometer" value="@Model.Kilometer" placeholder="Kilometresi" /><br />
+    <input type="text" name="FuelType" value="@Model.FuelType" placeholder="Yakıt Tipi" /><br />
+    <input type="text" name="Colour" value="@Model.Colour" placeholder="Rengi" /><br />
+    <input type="text" name="Price" value="@Model.Price" placeholder="Fiyatı" /><br />
+    <input type="text" name="Description" value="@Model.Description" placeholder="Açıklaması" /><br />
+    <input type="text" name="Stock" value="@Model.Stock" placeholder="Stok bilgisi" /><br />
+    <input type="file" name="file" placeholder="Araba Resmini Ekleyin" /><br />
+    <select name="CarbrandsID">
+        <option value="0" selected>Marka Seçimi Yapınız!</option>
+        @foreach (var item in ViewBag.MarkaListesi)
+        {
+            <option value="@item.ID">@item.Brand</option>
+        }
+    </select><br />
+    <input type="submit" valbaue="Kaydet" />
+</form>
+
+

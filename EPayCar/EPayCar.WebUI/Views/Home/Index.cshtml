@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/Index.css" asp-append-version="true" />
+<h1>E-PayCar Hoşgeldiniz</h1>
+
+
+
+<div class="konteynir">
+	<h1>E-PayCar </h1>
+	<h3>E-PayCarda Alışveriş yapmak en iyisidir</h3>
+
+	<div class="tanitim">
+		<p>
+			<a asp-area="" asp-controller="Home" asp-action="Brands" class="btn btn-success">Alışverişe Başla</a>
+		</p>
+    </div>
+
+	<img class="card-img-top" src="~/images/anasayfafotorafı.jpg" alt="Card image cap"> <br />
+
+	<div class="sosyal-aglar">
+		<a href="#">
+			<i class="fa fa-facebook"></i>
+		</a>
+		<a href="#" target="_blank">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<a href="#" target="_blank">
+			<i class="fa fa-linkedin"></i>
+		</a>
+		<a href="#" target="_blank">
+			<i class="fa fa-stack-overflow"></i>
+		</a>
+		<a href="#" target="_blank">
+			<i class="fa fa-github"></i>
+		</a>
+	</div>
+	<h2><a asp-area="" asp-controller="Information" asp-action="Index" class="btn btn-success">Hakkımızda</a></h2>
+</div>

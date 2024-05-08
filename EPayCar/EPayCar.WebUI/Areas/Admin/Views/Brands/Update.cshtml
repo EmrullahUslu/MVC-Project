@@ -1,0 +1,26 @@
+﻿@model EPayCar.Model.Entities.Carbrands
+
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Update</h1>
+
+@if (ViewBag.BrandsUpdateError != null)
+{
+    <div class="alert alert-danger">
+        @ViewBag.BrandsUpdateError
+    </div>
+}
+
+<br />
+
+<form asp-area="Admin" asp-controller="Brands" asp-action="Update" method="post">
+
+    <input type="hidden" name="ID" value="@Model.ID" />
+
+    <input type="text" name="Brand" value="@Model.Brand" placeholder="Marka Adını Giriniz" class="form-control form-control-lg" /><br />
+    <input type="text" name="Description" value="@Model.Description" placeholder="Marka Açıklamasını Giriniz" class="form-control" /><br />
+    <input type="submit" value="Güncelle" class="btn btn-success" />
+</form>

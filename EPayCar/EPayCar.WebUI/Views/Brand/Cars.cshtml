@@ -1,0 +1,29 @@
+﻿@model IEnumerable<EPayCar.Model.Entities.Carscs>
+<link href="~/css/bodyfont.css" rel="stylesheet" />
+
+@{
+    ViewData["Title"] = "Cars";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cars</h1>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-4">
+                <div class="card">
+                    <img class="card-img-top" src="~/images/@item.CarImageName" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.CareName</h5>
+                        <p class="card-text">@item.Description</p>
+                        <a asp-controller="Cars" asp-action="Detail" asp-route-id="@item.ID" class="btn btn-primary">Detayını Gör</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

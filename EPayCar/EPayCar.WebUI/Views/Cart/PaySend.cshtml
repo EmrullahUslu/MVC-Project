@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>PaySend</h1>
+
+<form asp-controller="Payment" asp-action="Pay" method="post">
+
+    <input type="text" name="AdSoyad" placeholder="İsim Soyisim Giriniz" class="form-control" /><br />
+    <input type="text" name="KartNo" placeholder="Kart No giriniz" class="form-control" /><br />
+    <input type="number" name="Cvv" placeholder="Cvv giriniz" class="form-control" /><br />
+    <input type="number" name="Ay" placeholder="Ay giriniz" class="form-control" /><br />
+    <input type="number" name="Yil" placeholder="Yıl giriniz" class="form-control" /><br />
+    <input type="text" name="Tutar" value="@ViewBag.Total" class="form-control" readonly /><br />
+    <input type="submit" value="Ödemeyi gerçekleştir" class="btn btn-success" />
+</form>
+

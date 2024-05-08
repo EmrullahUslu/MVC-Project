@@ -1,0 +1,49 @@
+﻿@model IEnumerable<EPayCar.Model.Entities.Carscs>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Araba Listesi Admin Panalinden</h1>
+
+<br />
+<a class="btn btn-success" asp-area="Admin" asp-controller="Cars" asp-action="Add">Yeni Araba Ekle</a>
+<br />
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger">
+        Kayıtlı Araba yok
+    </div>
+}
+else
+{
+
+    <br />
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Ürün ID</th>
+                <th scope="col">Araba Adı</th>
+                <th scope="col">Fiyat</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Günçelle</th>
+                <th scope="col">Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="col">@item.ID</th>
+                    <th scope="col">@item.CareName</th>
+                    <th scope="col">@item.Price</th>
+                    <th scope="col">@item.Stock</th>
+                    <th scope="col"><a asp-area="Admin" asp-controller="Cars" asp-action="Update" asp-route-id="@item.ID" class="btn btn-warning">Güncelle</a></th>
+                    <th scope="col"><a asp-area="Admin" asp-controller="Cars" asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Sil</a></th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
